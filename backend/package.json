@@ -1,4 +1,7 @@
 {
+  "engine": {
+    "node": "v22.12.0"
+  }
   "name": "backend",
   "version": "1.0.0",
   "description": "Table Reservation System",
