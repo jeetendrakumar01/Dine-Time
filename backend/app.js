@@ -14,13 +14,12 @@ dbConnection();
 // Middleware
 app.use(
   cors({
-    origin: ["https://dine-time-c9cb.vercel.app/"],
+    origin: ["process.env.FRONTEND_URL"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow necessary methods
     credentials: true, // Allow credentials (cookies/auth headers)
   })
 );
 app.use(express.json());
-mongoose.connect('mongodb+srv://Jeetendra5861:Jeetendra5861@cluster0.h6hsj.mongodb.net/?retryWrites=true') 
 app.use(express.urlencoded({ extended: true }));
 
 // Preflight request handling
