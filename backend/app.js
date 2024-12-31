@@ -6,7 +6,7 @@ import reservationRouter from "./routes/reservationRoute.js";
 import { dbConnection } from "./database/dbConnection.js";
 
 const app = express();
-dotenv.config({ path: "FRONTEND_URI" });
+dotenv.config();
 
 // Database connection
 dbConnection();
@@ -14,8 +14,8 @@ dbConnection();
 // Middleware
 app.use(
   cors({
-    origin: ["FRONTEND_URL"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow necessary methods
+    origin: ["https://dine-time-webapplication.netlify.app"], // Netlify frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
     credentials: true, // Allow credentials (cookies/auth headers)
   })
 );
