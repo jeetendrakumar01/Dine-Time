@@ -6,7 +6,7 @@ import reservationRouter from "./routes/reservationRoute.js";
 import { dbConnection } from "./database/dbConnection.js";
 
 const app = express();
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: "FRONTEND_URI" });
 
 // Database connection
 dbConnection();
@@ -14,7 +14,7 @@ dbConnection();
 // Middleware
 app.use(
   cors({
-    origin: ["process.env.FRONTEND_URL"],
+    origin: ["FRONTEND_URL"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow necessary methods
     credentials: true, // Allow credentials (cookies/auth headers)
   })
